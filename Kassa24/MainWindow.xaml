@@ -1,0 +1,56 @@
+﻿<Window x:Class="Kassa24.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kassa24"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="850">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="4"
+              FontSize="14"
+              VerticalAlignment="Center"
+              x:Name="MainMenu">
+            <MenuItem Header="Help" >
+                <MenuItem Header="View Help">
+                </MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Send Feedback">
+                    <MenuItem Header="Report a problem">
+
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Frame Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="4"
+               x:Name="MainFrame"
+               ></Frame>
+        
+        <Label Grid.Row="5"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               Background="LightGray"></Label>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,80 @@
+﻿<Page x:Class="Kassa24.Pages.AddOperatorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kassa24.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AddOperatorPage">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Label FontSize="24"
+               Margin="10 10 10 20" Content="Добвить оператора"></Label>
+
+            <GroupBox Header="Префиксы"
+                  x:Name="gbPrefixes"
+                  Margin="20 0 20 20">
+                <ScrollViewer VerticalScrollBarVisibility="Visible"
+                              MaxHeight="100">
+                    <StackPanel x:Name="stPrefixList" Orientation="Vertical" >
+                        <WrapPanel Orientation="Horizontal">
+                            <Label Content="Префикс"
+                       Margin="10"></Label>
+                            <TextBox x:Name="Prefix0"
+                         Height="25"
+                         FontSize="14"
+                         Width="150"
+                          Margin="10"></TextBox>
+                            <Button x:Name="addPrefix"
+                        Click="addPrefix_Click"
+                        Content="Добавить префикс"
+                         Margin="10"></Button>
+                        </WrapPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+
+            <Border CornerRadius="15" BorderBrush="LightGray" BorderThickness="1"
+                  Margin="20 0 20 20"
+                    x:Name="OperatorBind">
+                
+                <StackPanel Orientation="Vertical">
+                    <WrapPanel Orientation="Horizontal">
+                        <Label Content="Логотип компании"  Margin="10" Width="200"></Label>
+                        <TextBox x:Name="tbxLogo" Margin="10" Width="150" Height="25" 
+                                 Text="{Binding Path=Logo}"></TextBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Horizontal">
+                        <Label Content="Наименование сотового оператора"  Width="200" Margin="10"></Label>
+                        <TextBox x:Name="tbxNameOperator" Margin="10" Width="150" Height="25"
+                                 Text="{Binding Path=Name}"></TextBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Horizontal">
+                        <Label Content="Процент за обслуживание"  Width="200"  Margin="10"></Label>
+                        <TextBox x:Name="tbxTax" Margin="10" Width="150" Height="25"
+                                 Text="{Binding Path=Tax}"></TextBox>
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Horizontal" Margin="20">
+                        <Button Content="Добавить"
+                                x:Name="btnAddNewOperator"
+                                Click="btnAddNewOperator_Click"></Button>
+                    </WrapPanel>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+    
+    
+</Page>
